@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Overpass, Roboto } from "next/font/google";
 import "./globals.css";
+import { Nav } from "@/modules";
 
 const overpass = Overpass({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${overpass.variable} ${roboto.variable}`}>
-        {children}
+        <Nav />
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          {children}
+        </main>
       </body>
     </html>
   );
