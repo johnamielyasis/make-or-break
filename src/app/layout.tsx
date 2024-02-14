@@ -29,9 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${overpass.variable} ${roboto.variable}`}>
         <Nav />
-        <main className="flex min-h-screen w-full flex-col items-center justify-between bg-white">
-          {children}
-        </main>
+        <main className="flex min-h-screen w-full flex-col">{children}</main>
       </body>
     </html>
   );

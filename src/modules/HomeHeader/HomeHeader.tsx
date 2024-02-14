@@ -16,7 +16,7 @@ export const HomeHeader = () => {
           <img
             src="/home/logo.svg"
             alt="make or break logo"
-            className="h-4 w-auto mb-10"
+            className="h-5 w-auto mb-10"
           />
           <Typography variant="copy">
             {" "}
