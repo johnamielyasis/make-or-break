@@ -47,7 +47,10 @@ export const Nav = () => {
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
       >
-        <div className="absolute z-100 min-h-screen top-0 right-0 w-64 p-6 flex flex-col justify-between items-end shadow-md backdrop-blur-sm bg-white bg-opacity-80">
+        <div
+          ref={navRef}
+          className="absolute z-100 min-h-screen top-0 right-0 w-64 p-6 flex flex-col justify-between items-end shadow-md backdrop-blur-sm bg-white bg-opacity-80"
+        >
           <button onClick={() => toggler(isNavOpen, setIsNavOpen)}>
             <Typography className="uppercase">menu</Typography>
           </button>
