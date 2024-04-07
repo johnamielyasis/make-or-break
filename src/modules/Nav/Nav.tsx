@@ -41,13 +41,13 @@ export const Nav = () => {
       <Transition
         show={isNavOpen}
         enter="transition-transform duration-900"
-        enterFrom="translate-x-full opacity-0"
+        enterFrom="translate-x-full"
         enterTo="translate-x-0"
         leave="transition-transform duration-300"
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
       >
-        <div className="absolute z-100 min-h-screen top-0 right-0 bg-white w-64 p-6 flex flex-col justify-between items-end drop-shadow-sm opacity-95">
+        <div className="absolute z-100 min-h-screen top-0 right-0 w-64 p-6 flex flex-col justify-between items-end shadow-md backdrop-blur-sm bg-white bg-opacity-80">
           <button onClick={() => toggler(isNavOpen, setIsNavOpen)}>
             <Typography className="uppercase">menu</Typography>
           </button>
