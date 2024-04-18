@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { Transition } from "@headlessui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoIosArrowBack } from "react-icons/io";
 import { Typography } from "@/components";
 import { ButtonCluster } from "@/modules";
 import { toggler } from "@/utils/helper";
@@ -16,6 +18,7 @@ const buttonClusterArray = [
 export const Nav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -30,14 +33,26 @@ export const Nav = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [navRef]);
-
   return (
     <nav>
-      <div className="fixed flex left-0 top-0 w-full bg-white p-5 justify-between">
-        <span></span>
+      <div className="fixed flex left-0 top-0 w-full p-5 justify-between h-20">
+        <span>
+          {usePathname() !== "/" && (
+            <IoIosArrowBack
+              size={24}
+              style={{
+                height: "40px",
+              }}
+              onClick={() => router.back()}
+            />
+          )}
+        </span>
         <span></span>
         <span onClick={() => toggler(isNavOpen, setIsNavOpen)}>
-          <GiHamburgerMenu size={32} style={{ color: "black" }} />
+          <GiHamburgerMenu
+            size={32}
+            style={{ color: "black", height: "40px" }}
+          />
         </span>
       </div>
       <Transition
