@@ -32,8 +32,10 @@ export const Nav = () => {
   }, [navRef]);
 
   return (
-    <>
-      <div className="fixed left-0 top-0 flex w-full justify-end bg-white p-5">
+    <nav>
+      <div className="fixed flex left-0 top-0 w-full bg-white p-5 justify-between">
+        <span></span>
+        <span></span>
         <span onClick={() => toggler(isNavOpen, setIsNavOpen)}>
           <GiHamburgerMenu size={32} style={{ color: "black" }} />
         </span>
@@ -67,6 +69,6 @@ export const Nav = () => {
           </div>
         </div>
       </Transition>
-    </>
+    </nav>
   );
 };
