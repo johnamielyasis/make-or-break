@@ -15,10 +15,23 @@ const buttonClusterArray = [
   { title: "community", href: "" },
   { title: "submit a question", href: "" },
 ];
+
 export const Nav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [navCenter, setNavCenter] = useState("");
   const navRef = useRef<HTMLDivElement>(null);
+  const currentPath = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    switch (currentPath) {
+      case "/play":
+        setNavCenter("play: pick a mode");
+        break;
+      default:
+        console.log("you are at home", currentPath);
+    }
+  }, [currentPath, navCenter]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -37,7 +50,7 @@ export const Nav = () => {
     <nav>
       <div className="fixed flex left-0 top-0 w-full p-5 justify-between h-20">
         <span>
-          {usePathname() !== "/" && (
+          {currentPath !== "/" && (
             <IoIosArrowBack
               size={24}
               style={{
@@ -47,7 +60,9 @@ export const Nav = () => {
             />
           )}
         </span>
-        <span></span>
+        <span>
+          <Typography className="uppercase">{navCenter}</Typography>
+        </span>
         <span onClick={() => toggler(isNavOpen, setIsNavOpen)}>
           <GiHamburgerMenu
             size={32}
