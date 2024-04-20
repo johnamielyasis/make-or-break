@@ -48,26 +48,17 @@ export const Nav = () => {
   }, [navRef]);
   return (
     <nav>
-      <div className="fixed flex left-0 top-0 w-full p-5 justify-between h-20">
+      <div className="fixed flex items-center left-0 top-0 w-full p-5 justify-between h-20">
         <span>
           {currentPath !== "/" && (
-            <IoIosArrowBack
-              size={24}
-              style={{
-                height: "40px",
-              }}
-              onClick={() => router.back()}
-            />
+            <IoIosArrowBack size={24} onClick={() => router.back()} />
           )}
         </span>
         <span>
           <Typography className="uppercase">{navCenter}</Typography>
         </span>
-        <span onClick={() => toggler(isNavOpen, setIsNavOpen)}>
-          <GiHamburgerMenu
-            size={32}
-            style={{ color: "black", height: "40px" }}
-          />
+        <span onClick={() => toggler(isNavOpen, setIsNavOpen)} className="pb-1">
+          <GiHamburgerMenu size={32} />
         </span>
       </div>
       <Transition
