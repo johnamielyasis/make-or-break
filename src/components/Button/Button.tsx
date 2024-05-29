@@ -28,7 +28,7 @@ export const Button = ({ href, borderless, variant, text }: ButtonProps) => {
         </div>
       ) : (
         <button
-          className={`border hover:opacity-70 uppercase h-14 max-w-96 rounded-custom ${
+          className={`border hover:opacity-70 uppercase h-14 max-w-96 rounded-custom w-full ${
             variant === "black"
               ? "text-white bg-black"
               : variant === "white"

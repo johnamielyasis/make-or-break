@@ -12,7 +12,7 @@ export default function Home() {
           variant="black"
           text="Play Now"
           borderless={true}
-          href="/play"
+          href="/mode"
         />
       </div>
     </div>

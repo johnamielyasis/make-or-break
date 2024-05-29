@@ -29,7 +29,7 @@ export const Nav = () => {
         setNavCenter("play: pick a mode");
         break;
       default:
-        console.log("switch in nav not working");
+        console.log("switch in nav not working or at home");
     }
   }, [currentPath, navCenter]);
 
