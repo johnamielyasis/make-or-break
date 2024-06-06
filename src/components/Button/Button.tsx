@@ -1,7 +1,7 @@
 import { Typography } from "@/components";
 
 interface ButtonProps {
-  variant: "black";
+  variant: "black" | "styled" | "white";
   text: string;
   borderless?: boolean;
   href?: string;
@@ -33,8 +33,10 @@ export const Button = ({ href, borderless, variant, text }: ButtonProps) => {
               ? "text-white bg-black"
               : variant === "white"
                 ? "bg-white-400 border-none"
-                : "bg-gray-300 border-none"
-          } ${borderless ? "border-none" : ""} py-2 px-4`}
+                : variant === "styled"
+                  ? "bg-[rgba(255,255,255,0.75)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]"
+                  : "bg-gray-300 border-none"
+          } ${borderless ? "border-none" : ""} py-2 px-4 bg-clip-padding`}
         >
           <Typography variant="buttonText">{text}</Typography>
         </button>

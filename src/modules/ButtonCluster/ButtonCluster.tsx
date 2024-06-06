@@ -7,9 +7,9 @@ interface ButtonProps {
 }
 
 interface ButtonClusterProps {
+  isStyled?: boolean;
   buttons: ButtonProps[];
   type?: string;
-  isStyled?: boolean;
   styledVariant?: boolean;
 }
 export const ButtonCluster = ({ isStyled, ...props }: ButtonClusterProps) => {
@@ -18,7 +18,9 @@ export const ButtonCluster = ({ isStyled, ...props }: ButtonClusterProps) => {
       {isStyled ? (
         <div className="flex flex-col items-center">
           {props.buttons.map((b, i) => (
-            <Button variant="black" text={b.title} key={i} />
+            <span key={i} className="w-full my-1">
+              <Button variant="styled" text={b.title} />
+            </span>
           ))}
         </div>
       ) : (
