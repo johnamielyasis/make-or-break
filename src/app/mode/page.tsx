@@ -13,7 +13,9 @@ export default function Mode() {
       <div className="h-2/6 flex flex-grow flex-col">spacearea</div>
       <div className="h-4/6 flex flex-grow flex-col justify-between">
         <ButtonCluster buttons={modeButtons} isStyled />
-        <Button text="Next >" variant="black" />
+        <span className="text-center">
+          <Button text="Next >" variant="black" />
+        </span>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export const ButtonCluster = ({ isStyled, ...props }: ButtonClusterProps) => {
       {isStyled ? (
         <div className="flex flex-col items-center">
           {props.buttons.map((b, i) => (
-            <span key={i} className="w-full my-1">
+            <span key={i} className="w-full my-1 text-center">
               <Button variant="styled" text={b.title} />
             </span>
           ))}
