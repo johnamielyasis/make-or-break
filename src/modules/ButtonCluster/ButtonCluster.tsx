@@ -3,7 +3,7 @@ import { Button, Typography } from "@/components";
 interface ButtonProps {
   title: string;
   href?: string;
-  function?: Function;
+  onClick?: () => void;
 }
 
 interface ButtonClusterProps {
@@ -12,14 +12,15 @@ interface ButtonClusterProps {
   type?: string;
   styledVariant?: boolean;
 }
-export const ButtonCluster = ({ isStyled, ...props }: ButtonClusterProps) => {
+
+export const ButtonCluster = ({ ...props }: ButtonClusterProps) => {
   return (
     <>
-      {isStyled ? (
+      {props.isStyled ? (
         <div className="flex flex-col items-center">
           {props.buttons.map((b, i) => (
             <span key={i} className="w-full my-1 text-center">
-              <Button variant="styled" text={b.title} />
+              <Button variant="styled" text={b.title} onClick={b.onClick} />
             </span>
           ))}
         </div>

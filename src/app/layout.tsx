@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Overpass, Roboto } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/modules";
+import { RecoilRoot } from "recoil";
+import ClientWrapper from "@/layouts/ClientWrapper"; // wraps everything underneath under a use client umbrella
 
 const overpass = Overpass({
   subsets: ["latin"],
@@ -28,8 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${overpass.variable} ${roboto.variable}`}>
-        <Nav />
-        <main className="flex min-h-screen w-full flex-col">{children}</main>
+        <ClientWrapper>
+          <Nav />
+          <main className="flex min-h-screen w-full flex-col">{children}</main>
+        </ClientWrapper>
       </body>
     </html>
   );

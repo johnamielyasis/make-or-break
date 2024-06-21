@@ -5,9 +5,16 @@ interface ButtonProps {
   text: string;
   borderless?: boolean;
   href?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ href, borderless, variant, text }: ButtonProps) => {
+export const Button = ({
+  href,
+  borderless,
+  variant,
+  text,
+  onClick,
+}: ButtonProps) => {
   return (
     <>
       {href ? (
@@ -28,7 +35,7 @@ export const Button = ({ href, borderless, variant, text }: ButtonProps) => {
         </div>
       ) : (
         <button
-          className={`border hover:opacity-70 uppercase h-14 max-w-96 rounded-custom w-full ${
+          className={`hover:opacity-70 uppercase h-14 max-w-96 rounded-custom w-full ${
             variant === "black"
               ? "text-white bg-black"
               : variant === "white"
@@ -37,6 +44,7 @@ export const Button = ({ href, borderless, variant, text }: ButtonProps) => {
                   ? "bg-[rgba(255,255,255,0.75)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]"
                   : "bg-gray-300 border-none"
           } ${borderless ? "border-none" : ""} py-2 px-4 bg-clip-padding`}
+          onClick={onClick}
         >
           <Typography variant="buttonText">{text}</Typography>
         </button>
