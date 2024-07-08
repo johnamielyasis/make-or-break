@@ -7,10 +7,24 @@ import { useRecoilState } from "recoil";
 export default function Mode() {
   const [gameSettings, setGameSettings] = useRecoilState(gameSettingsAtom);
   const modeButtons = [
-    { title: "1st date", onClick: () => console.log("hw1d") },
-    { title: "in a relationship", onClick: () => console.log("hwiar") },
-    { title: "married", onClick: () => console.log("hwmr") },
-    { title: "friend zone", onClick: () => console.log("hwfz") },
+    {
+      title: "1st date",
+      onClick: () => setGameSettings({ ...gameSettings, gameMode: "1st date" }),
+    },
+    {
+      title: "in a relationship",
+      onClick: () =>
+        setGameSettings({ ...gameSettings, gameMode: "in a relationship" }),
+    },
+    {
+      title: "married",
+      onClick: () => setGameSettings({ ...gameSettings, gameMode: "married" }),
+    },
+    {
+      title: "friend zone",
+      onClick: () =>
+        setGameSettings({ ...gameSettings, gameMode: "friend zone" }),
+    },
   ];
 
   return (
