@@ -19,6 +19,10 @@ const config: Config = {
       borderRadius: {
         custom: "30px",
       },
+      colors: {
+        "make-green": "rgba(102, 204, 204, 1)",
+        "break-red": "rgba(255, 95, 87, 1)",
+      },
       fontFamily: {
         // add the css variable and include fallback fonts from tailwind default theme
         sans: ["var(--font-overpass)", ...fontFamily.sans],
