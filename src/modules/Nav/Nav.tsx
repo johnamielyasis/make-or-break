@@ -26,7 +26,13 @@ export const Nav = () => {
   useEffect(() => {
     switch (currentPath) {
       case "/play":
-        setNavCenter("play: pick a mode");
+        setNavCenter("pick a mode");
+        break;
+      case "/community":
+        setNavCenter("meet others");
+        break;
+      case "/submit-question":
+        setNavCenter("submit your questions");
         break;
       default:
         console.log("switch in nav not working or at home");
@@ -46,6 +52,7 @@ export const Nav = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [navRef]);
+
   return (
     <nav>
       <div className="fixed flex items-center left-0 top-0 w-full p-5 justify-between h-20">
