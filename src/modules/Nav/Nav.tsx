@@ -10,10 +10,10 @@ import { ButtonCluster } from "@/modules";
 import { toggler } from "@/utils/helper";
 
 const buttonClusterArray = [
-  { title: "home", href: "" },
-  { title: "play", href: "" },
-  { title: "community", href: "" },
-  { title: "submit a question", href: "" },
+  { title: "home", href: "/" },
+  { title: "play", href: "/play" },
+  { title: "community", href: "/community" },
+  { title: "submit a question", href: "submit-question" },
 ];
 
 export const Nav = () => {

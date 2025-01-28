@@ -9,6 +9,7 @@ interface ButtonProps {
   text: string;
   borderless?: boolean;
   href?: string;
+  isClicked?: boolean;
   onClick?: () => void;
 }
 
@@ -17,15 +18,18 @@ export const Button = ({
   borderless,
   variant,
   text,
+  isClicked,
   onClick,
 }: ButtonProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (buttonRef.current) {
+    if (buttonRef.current && isClicked) {
       buttonRef.current.focus();
+      console.log("focus", buttonRef.current.focus());
+      console.log("why isnt this firing");
     }
-  }, []);
+  }, [isClicked]);
 
   const getButtonClass = () => {
     switch (variant) {
@@ -54,12 +58,16 @@ export const Button = ({
             </a>
           </div>
         </div>
+      ) : isClicked ? (
+        <button ref={buttonRef}>
+          <Typography variant="buttonText">{text}clicked</Typography>
+        </button>
       ) : (
         <button
           ref={buttonRef}
-          className={`uppercase h-14 max-w-96 rounded-custom w-full ${getButtonClass()} ${
+          className={`rounded-custom uppercase h-14 max-w-96  w-full  ${
             borderless ? "border-none" : ""
-          } py-2 px-4 bg-clip-padding`}
+          } py-2 px-4 bg-clip-padding ${getButtonClass()}`}
           onClick={onClick}
         >
           <Typography variant="buttonText">{text}</Typography>

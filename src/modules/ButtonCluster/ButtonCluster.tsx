@@ -28,7 +28,9 @@ export const ButtonCluster = ({ ...props }: ButtonClusterProps) => {
         <div className="flex flex-col items-end">
           {props.buttons.map((b, i) => (
             <div className="my-2" key={i}>
-              <Typography className="uppercase">{b.title}</Typography>
+              <a href={b.href}>
+                <Typography className="uppercase">{b.title}</Typography>
+              </a>
             </div>
           ))}
         </div>
