@@ -39,9 +39,9 @@ export default function Mode() {
       </video>
       <div className="h-2/6 flex flex-grow flex-col"> </div>
       <div className="h-4/6 flex flex-grow flex-col justify-between">
-        <ButtonCluster buttons={modeButtons} isStyled />
+        <ButtonCluster buttons={modeButtons} isStyled radio />
         <span className="text-center">
-          <Button text="Next >" variant="black" onClick={() => console.log()} />
+          <Button text="Next" variant="black" onClick={() => console.log()} />
         </span>
         <h1>this is the recoil state: {gameSettings.gameMode}</h1>
       </div>

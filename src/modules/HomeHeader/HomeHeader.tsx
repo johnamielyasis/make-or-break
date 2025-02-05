@@ -1,4 +1,5 @@
 import { Typography } from "@/components";
+import Image from "next/image";
 
 export const HomeHeader = () => {
   return (
@@ -13,10 +14,12 @@ export const HomeHeader = () => {
         }}
       >
         <div className="w-full flex flex-col justify-between p-5">
-          <img
+          <Image
             src="/home/logo.svg"
             alt="make or break logo"
             className="h-5 w-auto mb-10"
+            width="160"
+            height="180"
           />
           <Typography variant="copy">
             {" "}

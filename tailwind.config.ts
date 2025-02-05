@@ -40,16 +40,14 @@ const config: Config = {
     plugin(({ addUtilities }) => {
       // Define custom utilities with explicit types
       const newUtilities = {
-        ".make-image-gradient::before": {
+        ".border-gradient": {
           borderImageSource:
             "linear-gradient(273.1deg, #73E7E7 2.56%, #A4F0F0 21.85%, #C6F8F8 33.42%, #FFFFFF 51.26%, #FFFFFF 54.64%, #C6F8F8 74.41%, #A4F0F0 84.53%, #73E7E7 95.14%)",
           borderImageSlice: "1",
-          overflow: "hidden",
-          clipPath: "border-box",
-          backgroundClip: "padding-box, border-box",
-          backgroundOrigin: "border-box",
-          outline: "none",
         },
+        ".rounded-custom": {
+          borderRadius: "30px",
+        }, // this ensures that the border itself is rounded
       };
       // Add the custom utilities to Tailwind
       addUtilities(newUtilities);

@@ -38,10 +38,17 @@ export const Button = ({
       case "white":
         return "bg-white-400 border-none";
       case "styled":
-        return "bg-[rgba(255,255,255,0.75)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]";
+        return "bg-[rgba(255,255,255,0.9)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]";
       default:
         return "bg-gray-300 border-none";
     }
+  };
+
+  const getConditionalClasses = () => {
+    if (variant === "styled" && isClicked) {
+      return "bg-custom-gradient p-1";
+    }
+    return "";
   };
 
   return (
@@ -49,7 +56,7 @@ export const Button = ({
       {href ? (
         <div className="my-4 w-full cursor-pointer max-w-96">
           <div
-            className={`border w-full py-3 px-4 hover:opacity-70 uppercase rounded-custom flex justify-center ${getButtonClass()} ${
+            className={`border w-full py-3 px-4 hover:opacity-85 uppercase rounded-custom flex justify-center ${getButtonClass()} ${getConditionalClasses()} ${
               borderless ? "border-none" : ""
             }`}
           >
@@ -59,15 +66,20 @@ export const Button = ({
           </div>
         </div>
       ) : isClicked ? (
-        <button ref={buttonRef}>
-          <Typography variant="buttonText">{text}clicked</Typography>
+        <button
+          ref={buttonRef}
+          className={`border w-full py-3 px-4 hover:opacity-85 uppercase rounded-custom flex justify-center ${getButtonClass()} ${getConditionalClasses()} ${
+            borderless ? "border-none" : ""
+          }`}
+        >
+          <Typography variant="buttonText">{text}</Typography>
         </button>
       ) : (
         <button
           ref={buttonRef}
           className={`rounded-custom uppercase h-14 max-w-96  w-full  ${
             borderless ? "border-none" : ""
-          } py-2 px-4 bg-clip-padding ${getButtonClass()}`}
+          } py-2 px-4 bg-clip-padding ${getButtonClass()} ${getConditionalClasses()}`}
           onClick={onClick}
         >
           <Typography variant="buttonText">{text}</Typography>
