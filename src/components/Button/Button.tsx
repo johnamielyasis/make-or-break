@@ -38,7 +38,7 @@ export const Button = ({
       case "white":
         return "bg-white-400 border-none";
       case "styled":
-        return "bg-[rgba(255,255,255,0.9)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]";
+        return "bg-[rgba(255,255,255,0.90)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]";
       default:
         return "bg-gray-300 border-none";
     }
@@ -46,7 +46,7 @@ export const Button = ({
 
   const getConditionalClasses = () => {
     if (variant === "styled" && isClicked) {
-      return "bg-custom-gradient p-1";
+      return "custom-gradient";
     }
     return "";
   };
@@ -68,11 +68,15 @@ export const Button = ({
       ) : isClicked ? (
         <button
           ref={buttonRef}
-          className={`border w-full py-3 px-4 hover:opacity-85 uppercase rounded-custom flex justify-center ${getButtonClass()} ${getConditionalClasses()} ${
+          className={`max-w-96  w-full uppercase rounded-custom flex justify-center ${getButtonClass()} ${getConditionalClasses()} ${
             borderless ? "border-none" : ""
           }`}
         >
-          <Typography variant="buttonText">{text}</Typography>
+          <span
+            className={`bg-[rgba(255,255,255)] py-2 px-4 w-full overflow-hidden rounded-custom`}
+          >
+            <Typography variant="buttonText">{text}</Typography>
+          </span>
         </button>
       ) : (
         <button

@@ -37,8 +37,8 @@ export default function Mode() {
       >
         <source src="mode/mode-video.mp4" type="video/mp4" />
       </video>
-      <div className="h-2/6 flex flex-grow flex-col"> </div>
-      <div className="h-4/6 flex flex-grow flex-col justify-between">
+      <div className="h-2/6 flex flex-grow flex-col"></div>
+      <div className="h-4/6 flex flex-grow flex-col justify-center">
         <ButtonCluster buttons={modeButtons} isStyled radio />
         <span className="text-center">
           <Button text="Next" variant="black" onClick={() => console.log()} />
