@@ -68,20 +68,18 @@ export const Button = ({
       ) : isClicked ? (
         <button
           ref={buttonRef}
-          className={`max-w-96  w-full uppercase rounded-custom flex justify-center ${getButtonClass()} ${getConditionalClasses()} ${
+          className={`relative h-14 w-full rounded-custom styled-border py-2 px-4 ${
             borderless ? "border-none" : ""
           }`}
         >
-          <span
-            className={`bg-[rgba(255,255,255)] py-2 px-4 w-full overflow-hidden rounded-custom`}
-          >
+          <div className="button-content-inner flex items-center justify-center rounded-custom uppercase">
             <Typography variant="buttonText">{text}</Typography>
-          </span>
+          </div>
         </button>
       ) : (
         <button
           ref={buttonRef}
-          className={`rounded-custom uppercase h-14 max-w-96  w-full  ${
+          className={`rounded-custom uppercase h-14 max-w-96 w-full ${
             borderless ? "border-none" : ""
           } py-2 px-4 bg-clip-padding ${getButtonClass()} ${getConditionalClasses()}`}
           onClick={onClick}

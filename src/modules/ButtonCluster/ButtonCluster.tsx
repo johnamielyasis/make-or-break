@@ -52,7 +52,7 @@ export const ButtonCluster = ({
   return (
     <>
       {isStyled ? (
-        <div ref={buttonClusterRef} className="flex flex-col items-center">
+        <div ref={buttonClusterRef} className="flex flex-col items-center my-2">
           {buttons.map((b, i) => (
             <span key={i} className="w-full my-1 text-center">
               <Button

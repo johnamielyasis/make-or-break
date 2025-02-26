@@ -62,7 +62,7 @@ const config: Config = {
         ".custom-gradient": {
           backgroundImage:
             "linear-gradient(273.1deg, #73E7E7 2.56%, #A4F0F0 21.85%, #C6F8F8 33.42%, #FFFFFF 51.26%, #FFFFFF 54.64%, #C6F8F8 74.41%, #A4F0F0 84.53%, #73E7E7 95.14%)",
-          animation: "spin-slow 3s linear infinite",
+          animation: "spin 3s linear infinite",
         },
       };
       // Add the custom utilities to Tailwind
