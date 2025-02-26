@@ -4,30 +4,19 @@ import Image from "next/image";
 export const HomeHeader = () => {
   return (
     <>
-      <div
-        className="w-full min-h-96 flex flex-col justify-center"
-        style={{
-          backgroundImage: "url('/home/header-image.svg')",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="w-full flex flex-col justify-between p-5">
-          <Image
-            src="/home/logo.svg"
-            alt="make or break logo"
-            className="h-5 w-auto mb-10"
-            width="160"
-            height="180"
-          />
-          <Typography variant="copy">
-            {" "}
-            A game where every decision counts on the journey to find love!
-            Navigate through a series of intriguing questions to discover more
-            about each other and the connection you may or may not share.
-          </Typography>
-        </div>
+      <div className="w-full flex flex-col justify-between p-5">
+        <Image
+          src="/home/hero.svg"
+          alt="make or break logo"
+          className="h-5 w-auto"
+          height="0"
+          width="0"
+          style={{ height: "30vh", width: "auto" }}
+        />
+        <Typography variant="copy">
+          Navigate through a series of intriguing questions to discover more
+          about each other and the connection you may or may not share.
+        </Typography>
       </div>
     </>
   );
