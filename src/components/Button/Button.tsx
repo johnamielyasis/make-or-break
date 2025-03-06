@@ -68,7 +68,7 @@ export const Button = ({
       ) : isClicked ? (
         <button
           ref={buttonRef}
-          className={`relative h-14 w-full rounded-custom styled-border py-2 px-4 ${
+          className={`relative h-14 w-full max-w-96 rounded-custom styled-border py-2 px-4 ${
             borderless ? "border-none" : ""
           }`}
         >
