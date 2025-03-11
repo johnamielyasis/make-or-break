@@ -13,10 +13,12 @@ export const HomeHeader = () => {
           width="0"
           style={{ height: "30vh", width: "auto" }}
         />
-        <Typography variant="copy">
-          Navigate through a series of intriguing questions to discover more
-          about each other and the connection you may or may not share.
-        </Typography>
+        <div className="flex justify-center">
+          <Typography variant="copy">
+            Navigate through a series of intriguing questions to discover more
+            about each other and the connection you may or may not share.
+          </Typography>
+        </div>
       </div>
     </>
   );

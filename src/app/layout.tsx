@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Overpass, Roboto } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/modules";
-import { RecoilRoot } from "recoil";
 import ClientWrapper from "@/layouts/ClientWrapper"; // wraps everything underneath under a use client umbrella
 
 const overpass = Overpass({
