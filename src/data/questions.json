@@ -965,7 +965,7 @@
   },
   {
     "id": 107,
-    "question": "Is there a conspiracy you strongly believe in?",
+    "question": "Is there a conspiracy theory you strongly believe in?",
     "answered": false,
     "answer": null,
     "tags": ["romantic", "example1", "example2"],
@@ -983,7 +983,7 @@
   },
   {
     "id": 109,
-    "question": "Where’s the most interesting place you have been to?",
+    "question": "Where is the most interesting place you have been to?",
     "answered": false,
     "answer": null,
     "tags": ["romantic", "example1", "example2"],

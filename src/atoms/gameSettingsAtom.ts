@@ -10,7 +10,7 @@ export const gameSettingsAtom = atom<gameSettings>({
   key: "gameSettingsAtom",
   default: {
     difficulty: "normal",
-    numberOfQuestions: 10,
-    gameMode: "1st date",
+    numberOfQuestions: 20,
+    gameMode: "just right",
   },
 });
