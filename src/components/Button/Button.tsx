@@ -2,7 +2,13 @@
 import { Typography } from "@/components";
 import { useEffect, useRef } from "react";
 
-type ButtonVariant = "black" | "styled" | "white";
+type ButtonVariant =
+  | "black"
+  | "styled"
+  | "white"
+  | "gameMake"
+  | "gameBreak"
+  | "gameSkip";
 
 interface ButtonProps {
   variant: ButtonVariant;
@@ -39,6 +45,12 @@ export const Button = ({
         return "bg-white-400 border-none";
       case "styled":
         return "bg-[rgba(255,255,255,0.90)] border-[6px] border-solid border-[rgba(255,255,255,0.25)]";
+      case "gameMake":
+        return "bg-blue-500 border-none";
+      case "gameBreak":
+        return "bg-red-500 border-none";
+      case "gameSkip":
+        return "bg-yellow-500 border-none";
       default:
         return "bg-gray-300 border-none";
     }

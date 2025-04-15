@@ -16,28 +16,25 @@ const buttonClusterArray = [
   { title: "submit a question", href: "submit-question" },
 ];
 
+const getNavCenter = (path: string) => {
+  switch (path) {
+    case "/mode":
+      return "pick a mode";
+    case "/community":
+      return "meet others";
+    case "/submit-question":
+      return "submit your questions";
+    default:
+      return "";
+  }
+};
+
 export const Nav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [navCenter, setNavCenter] = useState("");
   const navRef = useRef<HTMLDivElement>(null);
   const currentPath = usePathname();
+  const navCenter = getNavCenter(currentPath);
   const router = useRouter();
-
-  useEffect(() => {
-    switch (currentPath) {
-      case "/play":
-        setNavCenter("pick a mode");
-        break;
-      case "/community":
-        setNavCenter("meet others");
-        break;
-      case "/submit-question":
-        setNavCenter("submit your questions");
-        break;
-      default:
-        console.log("switch in nav not working or at home");
-    }
-  }, [currentPath, navCenter]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -55,7 +52,7 @@ export const Nav = () => {
 
   return (
     <nav>
-      <div className="fixed flex items-center left-0 top-0 w-full p-5 justify-between h-20">
+      <div className="fixed flex items-center left-0 top-0 w-full p-5 justify-between h-20 bg-white bg-opacity-80 backdrop-blur-sm shadow-md">
         <span>
           {currentPath !== "/" && (
             <IoIosArrowBack size={24} onClick={() => router.back()} />
@@ -64,9 +61,12 @@ export const Nav = () => {
         <span>
           <Typography className="uppercase">{navCenter}</Typography>
         </span>
-        <span onClick={() => toggler(isNavOpen, setIsNavOpen)} className="pb-1">
+        <button
+          onClick={() => toggler(isNavOpen, setIsNavOpen)}
+          className="pb-1"
+        >
           <GiHamburgerMenu size={32} />
-        </span>
+        </button>
       </div>
       <Transition
         show={isNavOpen}
