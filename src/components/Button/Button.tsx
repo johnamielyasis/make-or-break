@@ -32,8 +32,6 @@ export const Button = ({
   useEffect(() => {
     if (buttonRef.current && isClicked) {
       buttonRef.current.focus();
-      console.log("focus", buttonRef.current.focus());
-      console.log("why isnt this firing");
     }
   }, [isClicked]);
 

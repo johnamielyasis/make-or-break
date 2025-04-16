@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Transition } from "@headlessui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowBack } from "react-icons/io";
 import { Typography } from "@/components";
@@ -53,11 +52,11 @@ export const Nav = () => {
   return (
     <nav>
       <div className="fixed flex items-center left-0 top-0 w-full p-5 justify-between h-20 bg-white bg-opacity-80 backdrop-blur-sm shadow-md">
-        <span>
+        <button>
           {currentPath !== "/" && (
             <IoIosArrowBack size={24} onClick={() => router.back()} />
           )}
-        </span>
+        </button>
         <span>
           <Typography className="uppercase">{navCenter}</Typography>
         </span>
@@ -68,14 +67,10 @@ export const Nav = () => {
           <GiHamburgerMenu size={32} />
         </button>
       </div>
-      <Transition
-        show={isNavOpen}
-        enter="transition-transform duration-900"
-        enterFrom="translate-x-full"
-        enterTo="translate-x-0"
-        leave="transition-transform duration-300"
-        leaveFrom="translate-x-0"
-        leaveTo="translate-x-full"
+      <div
+        className={`fixed top-0 right-0 w-full h-screen transition-transform duration-300 ease-in-out ${
+          isNavOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div
           ref={navRef}
@@ -96,7 +91,7 @@ export const Nav = () => {
             />
           </div>
         </div>
-      </Transition>
+      </div>
     </nav>
   );
 };
